@@ -1,0 +1,48 @@
+<div class="container"> 
+  <div> 
+    <h2>Modifier un Chaussure :</h2>              
+  </div> 
+  <form >          
+    <div class="col-sm-2 col-md-2 col-lg-2"> 
+      <label>ID Chaussure</label> 
+      <input readonly type="text" [(ngModel)]="currentChaussure.idChaussure" name="idChaussure" class="form-control"> 
+    </div> 
+
+    <div class="col-sm-4 col-md-4 col-lg-4" > 
+      <label>Nom Chaussure</label> 
+      <input type="text" [(ngModel)]="currentChaussure.nomChaussure" name="nomChaussure" class="form-control"> 
+    </div> 
+
+    <div class="col-sm-2 col-md-2 col-lg-2"> 
+      <label>Prix Chaussure</label> 
+      <input type="number" [(ngModel)]="currentChaussure.prixChaussure" name="prixChaussure" class="form-control"> 
+    </div> 
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="pointureChaussure">Pointure</label> 
+      <select id="pointureChaussure" [(ngModel)]="currentChaussure.pointureChaussure" name="pointureChaussure" class="form-control">
+        <!-- Options here -->
+      </select>
+    </div> 
+
+    <div class="col-sm-4 col-md-4 col-lg-4"> 
+      <label for="couleurChaussure">Couleur</label> 
+      <select id="couleurChaussure" [(ngModel)]="currentChaussure.couleurChaussure" name="couleurChaussure" class="form-control">
+        <!-- Options here -->
+      </select>
+    </div> 
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="lieu">Lieu de Creation</label> 
+      <select class="form-control form-control-lg" id="idLieu" name="idLieu" [(ngModel)]="updatedIdLieu">
+        <option *ngFor="let lieu of lieu" [value]="lieu.idLieu">
+          {{lieu.pays}}
+        </option>
+      </select>
+    </div>
+
+    <div class="mt-2"> 
+      <button type="submit" (click)="updateChaussure()" class="btn btn-success">Modifier</button> 
+    </div>   
+  </form> 
+</div>
